@@ -22,6 +22,7 @@ object SimpleKafkaProducer extends App with LazyLogging {
 
   }
 
+
   def recordProducer(numberOfRecords: Int, data: String, topic: String) = {
     val producer = new KafkaProducer[Nothing, String](ProducerProperties.buildProducerProperties)
 

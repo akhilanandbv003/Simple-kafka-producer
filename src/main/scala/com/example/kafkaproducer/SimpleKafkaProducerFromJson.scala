@@ -1,26 +1,18 @@
 package com.example.kafkaproducer
 
+import com.example.kafkaproducer.utils.FileUtils
 import com.typesafe.scalalogging.LazyLogging
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
-object SimpleKafkaProducer extends App with LazyLogging {
+object SimpleKafkaProducerFromJson extends App
+  with FileUtils
+  with LazyLogging {
 
   val numberOfRecords = 1
-  val topicName = "university.student.dev.v1.avro"
+  val topicName = "university.student.dev.v1.json"
 
-  val data = createStudentData()
-  recordProducer(1,"My name is Jon" , topicName)
-
-  def createStudentData(): Student = {
-    new Student(
-      name = "Jon",
-      cwid = "A20351000",
-      level = "Graduate",
-      addresses = List(),
-      phoneNumber = None
-    )
-
-  }
+  val data = readFromFile("src/main/resources/json/student.json")
+    recordProducer(1, data, topicName)
 
 
   def recordProducer(numberOfRecords: Int, data: String, topic: String) = {

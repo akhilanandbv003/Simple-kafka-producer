@@ -14,6 +14,7 @@ resolvers ++= Seq(
 libraryDependencies ++= {
   Seq(
     "io.confluent" % "kafka-avro-serializer" % confluent,
+    "io.confluent" % "kafka-json-serializer" % confluent,
     "com.typesafe" % "config" % "1.3.4", // To read from app.conf
 
     "org.apache.kafka" %% "kafka" % kafka // Versions need to match with kafka, scala and build.properties or else we will get sbt download errors

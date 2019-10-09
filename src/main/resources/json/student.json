@@ -1,0 +1,14 @@
+{
+  "name": "Jon",
+  "cwid": "A20351000",
+  "level": "Graduate",
+  "addresses": [
+    {
+      "houseNumber": 100,
+      "streetName": "King dr",
+      "city": "Chicago",
+      "state": "IL"
+    }
+  ],
+  "phoneNumber": "312-777-9899"
+}
